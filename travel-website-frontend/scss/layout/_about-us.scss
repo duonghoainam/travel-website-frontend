@@ -270,11 +270,12 @@
 
 .about-us-social__wrapper {
    height: 108px;
-   width: 1824px;
+   width: 100%;
    position: relative;
    overflow: hidden;
-   margin: 150px auto 0;
+   padding: 0 40px;
    margin-bottom: 80px;
+   background-color: #38c3c5;
 
    &__item-swiper {
        width: 220px;

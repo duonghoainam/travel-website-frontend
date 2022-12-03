@@ -10,7 +10,7 @@ const Home = () => {
       <>
          <Head>
             <title>YOURTOUR</title>
-            <meta name="description" content="Hiven" />
+            <meta name="description" content="YOURTOUR" />
             <link rel="icon" href="/favicon.ico" />
          </Head>
 

@@ -329,3 +329,21 @@
       padding: 0 100px;
    }
 }
+
+.about-us-social__wrapper {
+   height: 72px;
+   &__item-swiper {
+     width: 160px;
+     height: 72px;
+   }
+ 
+   .carousel {
+     gap: 40px;
+   }
+ 
+   .card {
+     width: 160px;
+     height: 72px;
+   }
+ }
+ 

@@ -14,8 +14,8 @@ const News = () => {
    return (
       <>
          <Head>
-            <title>Hiven</title>
-            <meta name="description" content="Hiven" />
+            <title>YOURTOUR</title>
+            <meta name="description" content="YOURTOUR" />
             <link rel="icon" href="/favicon.ico" />
          </Head>
 
@@ -92,11 +92,11 @@ const News = () => {
                   </div>
                </div>
             </div>
-            {/* <div className="load-more-post">
+            <div className="load-more-post">
                <span data-magnetic>
                   <div className="load-more-post_button">LOAD MORE POST</div>
                </span>
-            </div> */}
+            </div>
          </main>
       </>
    );

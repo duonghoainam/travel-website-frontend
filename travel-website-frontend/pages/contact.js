@@ -8,8 +8,8 @@ const Contact = () => {
    return (
       <>
          <Head>
-            <title>Hiven</title>
-            <meta name="description" content="Hiven" />
+            <title>YOURTOUR</title>
+            <meta name="description" content="YOURTOUR" />
             <link rel="icon" href="/favicon.ico" />
          </Head>
 

@@ -6,16 +6,16 @@ import MainLayout from '@components/layouts/main-layout';
 import MoreLink from '@components/more-link/more-link';
 import ScrollToTop from '@components/scroll-to-top/scroll-to-top';
 import Head from 'next/head';
-// import { Swiper, SwiperSlide  } from 'swiper/react'
-// import { SwiperButtonNext } from './button-swiper-next';
-// import { SwiperButtonPre } from './button-swiper-pre'
+import { Swiper, SwiperSlide  } from 'swiper/react'
+import { SwiperButtonNext } from './button-swiper-next';
+import { SwiperButtonPre } from './button-swiper-pre'
 
 const AboutUs = () => {
    return (
       <>
          <Head>
-            <title>Hiven</title>
-            <meta name="description" content="Hiven" />
+            <title>YOURTOUR</title>
+            <meta name="description" content="YOURTOUR" />
             <link rel="icon" href="/favicon.ico" />
          </Head>
 
@@ -164,7 +164,7 @@ const AboutUs = () => {
                   </div>
                </div>
             </div>
-            {/* <div className="about-us-social__wrapper">
+            <div className="about-us-social__wrapper">
                <Swiper 
                   onSlideChange={(swiper) => {
                      const leftArrow = document.querySelector(".left  path")
@@ -216,7 +216,7 @@ const AboutUs = () => {
                      <div className="about-us-social__wrapper__item-swiper swiper6"></div>
                   </SwiperSlide>
                </Swiper>
-            </div> */}
+            </div>
             <ScrollToTop></ScrollToTop>
          </main>
       </>
