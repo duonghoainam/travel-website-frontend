@@ -1,6 +1,6 @@
 import { useSwiper } from 'swiper/react';
 
-export const SwiperButtonPre = () => {
+export default function SwiperButtonPre () {
    const swiper = useSwiper();
    return (
       <button
