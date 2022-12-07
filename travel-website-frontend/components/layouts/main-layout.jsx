@@ -9,6 +9,7 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Box, CircularProgress } from '@mui/material';
 import { fetchHivenDetails, fetchHivenNews } from '@utils/hivenSlice';
+import { Facebook } from './Facebook';
 
 export default function MainLayout({ children }) {
    const hiven = useSelector((x) => x.hiven.data);
@@ -58,6 +59,7 @@ export default function MainLayout({ children }) {
       <>
          <Header />
          {children}
+         <Facebook />
          <ScrollToTop />
          {children.type.name !== 'Contact' && <ContactWithUs />}
          <Footer />
