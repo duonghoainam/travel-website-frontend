@@ -7,8 +7,8 @@ import MoreLink from '@components/more-link/more-link';
 import ScrollToTop from '@components/scroll-to-top/scroll-to-top';
 import Head from 'next/head';
 import { Swiper, SwiperSlide  } from 'swiper/react'
-import { SwiperButtonNext } from './button-swiper-next';
-import { SwiperButtonPre } from './button-swiper-pre'
+import SwiperButtonNext from './button-swiper-next';
+import SwiperButtonPre from './button-swiper-pre'
 
 const AboutUs = () => {
    return (
