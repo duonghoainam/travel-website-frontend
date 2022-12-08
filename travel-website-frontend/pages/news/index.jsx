@@ -65,25 +65,25 @@ const News = () => {
                      </div>
                      <div className="cards-grid">
                         <NewsCard
-                           url="http://localhost:3000/news/1"
+                           url="/news/1"
                            banner={
                               'https://www.saigontourist.net/uploads/destination/NuocNgoai/Nam-Phi/Boulders-Beach_548075986.jpg'
                            }
                         />
                         <NewsCard
-                           url="http://localhost:3000/news/1"
+                           url="/news/1"
                            banner={
                               'https://www.saigontourist.net/uploads/destination/NuocNgoai/Nam-Phi/Boulders-Beach_548075986.jpg'
                            }
                         />
                         <NewsCard
-                           url="http://localhost:3000/news/1"
+                           url="/news/1"
                            banner={
                               'https://www.saigontourist.net/uploads/destination/NuocNgoai/Nam-Phi/Boulders-Beach_548075986.jpg'
                            }
                         />
                         <NewsCard
-                           url="http://localhost:3000/news/1"
+                           url="/news/1"
                            banner={
                               'https://www.saigontourist.net/uploads/destination/NuocNgoai/Nam-Phi/Boulders-Beach_548075986.jpg'
                            }

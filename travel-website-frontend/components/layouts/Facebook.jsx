@@ -41,7 +41,7 @@ export function Facebook() {
       cleanup();
     };
   }, []);
-
+  
   return (
     <>
       <div id="fb-root"></div>
