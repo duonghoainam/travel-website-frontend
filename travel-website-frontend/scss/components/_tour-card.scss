@@ -1,0 +1,19 @@
+.tour-card{
+    display: flex;
+    .card-header{
+        padding-bottom: 40px;
+    }
+    .card-body{
+        .body-content.card-description{
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 2; /* number of lines to show */
+                    // line-clamp: 2; 
+            -webkit-box-orient: vertical;
+        }
+    }
+    .view-more{
+        opacity: 1;
+    }
+}

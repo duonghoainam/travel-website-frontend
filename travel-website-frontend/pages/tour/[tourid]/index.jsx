@@ -1,4 +1,4 @@
-import { NewsDetailsCard } from '@components/admin/news/news-details';
+import { TourDetailsCard } from '@components/admin/news/news-details';
 import { DashboardLayout } from '@components/layouts/dashboard-layout';
 import MainLayout from '@components/layouts/main-layout';
 import { Box, Container } from '@mui/material';
@@ -10,7 +10,7 @@ import Hexagon from '@components/common/hexagon';
 import HexagonImage from '@components/hexagon-image/hexagon-image';
 import SomeTour from '@components/search-tour/some-tour';
 import IconHexagonSmall from '@components/icons/ic-hexagon-small';
-const NewsDetail = () => {
+const TourDetail = () => {
    const router = useRouter();
    const { newsid } = router.query;
 
@@ -105,5 +105,5 @@ const NewsDetail = () => {
     </>
    );
 };
-NewsDetail.Layout = MainLayout;
-export default NewsDetail;
+TourDetail.Layout = MainLayout;
+export default TourDetail;
