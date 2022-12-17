@@ -10,6 +10,7 @@ import axios from 'axios';
 import { toast } from 'react-toastify';
 import { useSelector } from 'react-redux';
 import Paypal from '@components/paypal/paypal';
+import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
 
 const schema = yup.object({
    fullName: yup
@@ -359,17 +360,46 @@ export default function BookingForm() {
                            <label htmlFor="agree"> I agree to <b>terms and conditions</b></label>
                         </div>
 
-                        <button disabled={isSubmitting} type="submit" id="submit-btn">
+                        {/* <button disabled={isSubmitting} type="submit" id="submit-btn">
                            <MoreLink
                               disabled={isSubmitting}
                               text={`${isSubmitting ? 'CONNECTING TO PAYPAL ...' : 'PAY NOW'} `}
                               padding
                               light
                            />
-                        </button>
-                        <div id="paypal">
-                        </div>
-                        {scriptLoaded? <Paypal>scriptLoaded</Paypal> : <>scriptLoaded!!!!!</>}
+                        </button> */}
+                        <PayPalScriptProvider
+                           options={{
+                              "client-id": "AUZuKoBcDY6wWoMFE0YI2rIoNyJvK5nOqYDGVOedplccy3nSmp2Gv9cnGF3ZLhV260NIvvWPft3lYLPy",
+                           }}
+                        >
+                           <PayPalButtons
+                              // forceReRender={[amount, currency, style]}
+                              createOrder={(data, actions) => {
+                                 return actions.order
+                                       .create({
+                                          purchase_units: [
+                                             {
+                                                   amount: {
+                                                      value: "2.00",
+                                                   },
+                                             },
+                                          ],
+                                       })
+                                       // .then((orderId) => {
+                                       //    // Your code here after create the order
+                                       //    return orderId;
+                                       // });
+                              }}
+                              // onApprove={function (data, actions) {
+                              //    return actions.order.capture().then(function () {
+                              //          // Your code here after capture the order
+                              //    });
+                              // }}
+                           />
+                        </PayPalScriptProvider>
+                        {/* <div id="paypal"></div> */}
+                        {/* {scriptLoaded? <Paypal>scriptLoaded</Paypal> : <>scriptLoaded!!!!!</>} */}
                      </form>
                   </FormProvider>
                </div>

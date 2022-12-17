@@ -1,6 +1,6 @@
 import React,{useRef} from "react";
 import ReactDOM from "react-dom"
-const PayPalButton = paypal.Buttons.driver("react", { React, ReactDOM });
+// const PayPalButton = paypal.Buttons.driver("react", { React, ReactDOM });
 export default function Paypal() {
   
   const createOrder = (data, actions) => {
@@ -18,10 +18,10 @@ export default function Paypal() {
     return actions.order.capture();
   };
   return (
-    <PayPalButton
-      createOrder={(data, actions) => createOrder(data, actions)}
-      onApprove={(data, actions) => onApprove(data, actions)}
-    />
-    // <h1>aaaaa</h1>
+    // <PayPalButton
+    //   createOrder={(data, actions) => createOrder(data, actions)}
+    //   onApprove={(data, actions) => onApprove(data, actions)}
+    // />
+    <h1>aaaaa</h1>
   );
 }
