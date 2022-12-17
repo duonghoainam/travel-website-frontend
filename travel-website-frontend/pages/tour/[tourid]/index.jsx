@@ -12,7 +12,7 @@ import SomeTour from '@components/search-tour/some-tour';
 import IconHexagonSmall from '@components/icons/ic-hexagon-small';
 const TourDetail = () => {
    const router = useRouter();
-   const { newsid } = router.query;
+   const { tourid } = router.query;
 
    return (
     <>
@@ -62,43 +62,125 @@ const TourDetail = () => {
                     </div>
                 </div>
             </div>
-            <p className="blog-detail-text">
-               A dark-water swamp nestled in the Labi Hills Forest Park beckons hikers and nature-lovers to stop and wonder at its landscape and what lies beneath the still waters speckled with clumps of waving weeds. Luagan Lalak, mysterious and imposing, is a placid habitat for a collection of fauna and flora, and a photographers’ muse.
-               The Luagan Lalak Forest Recreation Park is in the Belait District, about 25 kilometres on the Labi road after the turnoff from the highway. The park covers an area of 270 hectares within the Labi Hills Forest Reserve. Access to the park is from the car park by the roadside, down a concrete stairway. It is a quiet location but not deserted, as there is an office for the park supervisor across the park entrance with clean restrooms attached.
-            </p>
+            <div className="tour-info">
+               <div className='tour-row'>
+                  <div className="blog-detail-text">THỜI GIAN:<b> 6 ngày 5 đêm</b></div>
+                  <div className="blog-detail-text">PHƯƠNG TIỆN:<b> Hàng Không Vietnam Airlines</b></div>
+               </div>
+               <div className='tour-row'>
+                  <div className="blog-detail-text">ĐIỂM XUẤT PHÁT:<b> TP. Hồ Chí Minh</b></div>
+                  <div className="blog-detail-text">ĐIỂM ĐẾN:<b> Hà Nội - Hạ Long - Ninh Bình - Sapa</b></div>
+               </div>
+               <div className='tour-bill-table'>
+                  <div className='row tour-table-header'>
+                     <div className='tour-table-text'><b>KHỞI HÀNH</b></div>
+                     <div className='tour-table-text'><b>MÃ TOUR</b></div>
+                     <div className='tour-table-text'><b>GIÁ NGƯỜI LỚN</b></div>
+                     <div className='tour-table-text'><b>GIÁ TRẺ EM</b></div>
+                     <div className='tour-table-text'></div>
+                  </div>
+                  <br></br>
+
+                  <hr styled={{borderTop: "3px dashed #bbb"}}></hr>
+                  <br></br>
+                  <div className='row tour-list-item'>
+                     <h2 className='tour-table-text'>02/01/2023</h2>
+                     <h2 className='tour-table-text'>STN084-2023-00151</h2>
+                     <h2 className='tour-table-text'>10.979.000</h2>
+                     <h2 className='tour-table-text'>7.000.000</h2>
+                     <a href='/booking' className='tour-table-button'>ĐẶT NGAY</a>
+                  </div>
+                  <br></br>
+                  <div className='row tour-list-item'>
+                     <h2 className='tour-table-text'>02/01/2023</h2>
+                     <h2 className='tour-table-text'>STN084-2023-00151</h2>
+                     <h2 className='tour-table-text'>10.979.000</h2>
+                     <h2 className='tour-table-text'>7.000.000</h2>
+                     <a href='/booking' className='tour-table-button'>ĐẶT NGAY</a>
+                  </div>
+                  <br></br>
+                  <div className='row tour-list-item'>
+                     <h2 className='tour-table-text'>02/01/2023</h2>
+                     <h2 className='tour-table-text'>STN084-2023-00151</h2>
+                     <h2 className='tour-table-text'>10.979.000</h2>
+                     <h2 className='tour-table-text'>7.000.000</h2>
+                     <a href='/booking' className='tour-table-button'>ĐẶT NGAY</a>
+                  </div>
+               </div>
+               <div className='blog-detail-text'>
+                  <b>Tour này có gì hay</b>,<br/>
+                  - Khởi hành (thứ 2): 2, 9/1; 6, 13, 20, 27/2;  6, 13, 20, 27/3/2023 <br/>
+                  - Chiêm ngưỡng động Thiên Cung, các hòn Đỉnh Hương - Trống Mái (Gà Chọi)- Chó Đá.<br/>
+                  - Tham quan khu du lịch Tràng An - nơi có cảnh quan ngoạn mục với hệ thống sông, suối chảy tràn trong các thung lũng, các hang xuyên thủy động và các dãy núi đá vôi trùng điệp<br/>
+                  - Tham quan cột mốc biên giới và cửa khẩu quốc tế Lào Cai.
+               </div>
+            </div>
 
             <iframe
                className='blog-detail-video'
                width={780}
                height={600}
                style={{margin: "20px auto", display: 'block'}}
-               src={`https://www.youtube.com/embed/GFAVHcQJA9A`}
+               src={`https://www.youtube.com/embed/diO662cf_Go`}
                // src={`https://www.youtube.com/v/${item.data.youtube_link}`}
                title={`https://www.youtube.com/embed/bjt1jZfTCBc`}
             ></iframe>
 
             <p className="blog-detail-text">
-               If you have never been to Luagan Lalak, a trip before sunrise is a good start. The cool morning air, the tranquility of the location, and the possibility of having the whole place to yourself, is an experience to aim for.  At 6 a.m. in early August, the sun is not out yet and the sky is a shade of royal blue that turns lighter as the minutes pass. With the help of the light from a phone, you can make your way down the steps to the beginning of a walkway that leads to a solid gazebo with wooden benches. The path branches into 2 paths midway, both ending in bellies of gazebos too. This is the network of walkways that were once wooden planks and dilapidated but now replaced by a sturdy concrete structure fashioned to look like a wooden bridge. At this hour, the place is still and silent, save for the calls of wild birds and the occasional ‘plonk’ of fish jumping in the water. Within 15 minutes, the sky will brighten enough to reveal the full view of these structures on Luagan Lalak.
-               {newsid}
-            </p>
-            
-            <img className='blog-detail-image' rel="" src="https://wiki-travel.com.vn/uploads/picture/camnhi-221501111520-Cong-vien-Quoc-gia-Ulu-Temburong.jpg" title="Công viên quốc gia Ulu Temburong" alt="Công viên quốc gia Ulu Temburong"/>
-            
-            <p className="blog-detail-text">
-            The park is part of the Labi Hills Forest Reserve, a pristine and protected site for its nature, plants, and animals. At the centre of this park is Luagan Lalak, an alluvial freshwater swamp filled by rain water. ‘Luagan’ means ‘non-flowing body of water’ in the Malay language. The water is a breeding ground for the Striped snakehead fish, a species valued and eaten by the locals as they believe it is good for healing wounds, healthy skin and joints, and anti-inflammatory benefits. These waters, however, are not safe for swimming or boating, and there are enough signages warning against doing so, as its calm surface occasionally hides a saltwater crocodile or two, moving surreptitiously in search of food in these waters rich with organisms.<br/><br/>
-            You can walk along the banks surrounding the lake and if you’re lucky, you might spot some of the land mammals which are normally shy and elusive but have been seen in this park. The Sunda pangolin, the red langur or red leaf monkey, the colugo or flying lemur and the Horsfield’s tarsier, are all known to inhabit this lush, undisturbed forest. Birdwatchers often descend onto this lake to observe and capture images of the endemic and migratory birds that stopover. It is a quiet, birding world where one can spot such beautiful species as Black-and-yellow Broadbill, Black-and-red Broadbill, Green Broadbill, Yellow-rumped Flowerpecker, Garnet Pitta, Argus Pheasant, Storm Stork, Bornean Bristlehead, Trogons, Rhinoceros Hornbill, Slaty Woodpecker, Crested Fireback, Red-billed Malkoha, Common Kingfisher, Buffy Fish Owl and more. On a fine sunny day, the gazebos provide much-needed shelter from the heat and it won’t be a bad idea to park yourself there in the late afternoon when it is cooler with some snacks and drinks, watch the birds flutter and forage, and just enjoy the peaceful scene while you wait for the sun to set.<br/><br/>
-            Photographers will find Luagan Lalak an intriguing landscape with many moods. In the early morning before sunrise, thick fog rolls in towards the centre of the lake, giving it an ethereal, otherworldly aesthetic. In the drier months, the water recedes drastically – revealing islands of Lepironia sedges or purun, as they are known locally, a prolific reed with multiple uses – and the place looks more like a field with pools of water than a lake. During the wet season, rain fills up the swamp and covers all the vegetation, creating a dark-water lake so still that it mirrors everything above the water. Visiting at different times of the year will give different sceneries. In the darkness of the night, the park has another winning side. As it is located a good distance from populated areas, the wide, open space over the lake and the lack of light is an advantage for stargazing. Between March and September, the Milky Way’s core is visible in the night sky, tempting stargazers with great views of the constellations and fantastic opportunities for starry photographs.        
-            </p>
-            
-            <img className='blog-detail-image' rel="" src="https://www.bruneitourism.com/wp-content/uploads/2022/10/labiheader-1.jpg" title="Công viên quốc gia Ulu Temburong" alt="Công viên quốc gia Ulu Temburong"/>
-
-            <p className="blog-detail-text">
-            Recent upgrades to the park include 72 new signages installed throughout the area, some of which are useful guidelines to help visitors navigate and use the park, and others have informative data to enlighten visitors on the wild inhabitants and vegetation of the park. These new signs are part of the Forestry Department’s goal to make visits to Luagan Lalak educational as well as entertaining, and foster an understanding of the flora and fauna that are part of our rainforest’s eco-system.<br/><br/>
-            As you walk along the paths, look out for the ground signages. If you are wondering about some of the vegetation and lifeforms that you will encounter along the walking trails on the banks of the lake, these helpful signs on the ground with the common and scientific names can help you identify them along with some general information. One can learn about ferns, termites and various local plants such as tongkat ali, rengas, kulimpapa and simpur, Brunei’s national flower.<br/><br/>
-            There are 15 signages affixed onto the handrails of the walkways which carry interesting bits of information about the commonly-spotted animals and birds in the area: regions where they can normally be found, their diet, their habitat, characteristics, features, skills and the calls they make to communicate. One can learn that the red leaf monkey is also known as a cikok in Brunei and their diet consists of fruits, seeds, leaves and flowers, and that they spend most of their time in the canopy of dipterocarp trees; and flying lemurs don’t actually fly but they glide with their patagium (the membrane between their limbs) for up to 200 metres between trees. The bird signages even include the specific sounds that the birds make so you can listen out for their calls and try to identify their species. One can certainly learn a great deal on a walkabout around the lake.<br/><br/>    
-            As with all protected places, enjoying these spaces must come with responsibility – a mentality vital for the conservation of the environment and the inhabitants of this park. Some important signages are erected to remind visitors of the simple ways in which they can help. Litter, in particular single-use plastics, discarded randomly, doesn’t just ruin the park’s natural beauty but causes harm to the animals too, and make conservation harder for the park authorities.
+            <b>NGÀY 01: TP. HCM - HÀ NỘI - NINH BÌNH (Ăn trưa, chiều)</b>
+            Buổi sáng, quý khách tập trung tại Cổng D1 - Ga đi trong nước - SB.Tân Sơn Nhất. HDV Lữ hành Saigontourist đón quý khách và hỗ trợ làm thủ tục. <b>Khởi hành ra Hà Nội (chuyến bay VN240 lúc 7h hoặc 8h30)</b>. Đáp xuống sân bay Nội Bài, xe đưa đoàn theo đường cao tốc đến Ninh Bình, viếng chùa Bái Đính, tham quan <b>Khu du lịch Tràng An</b> - có cảnh quan ngoạn mục với hệ thống sông, suối chảy tràn trong các thung lũng, các hang xuyên thủy động, các dãy núi đá vôi trùng điệp. KDL nằm trong quần thể danh thắng Tràng An đã được UNESCO công nhận di sản hỗn hợp đầu tiên của Việt Nam và khu vực ĐNÁ (đạt cả hai tiêu chí về văn hóa và thiên nhiên). Buổi tối, đoàn tự do khám phá <b>phố cổ Hoa Lư</b>, ngắm <b>tháp Chùa Bạc</b> lung linh ánh đèn soi bóng bên <b>hồ Kỳ Lân</b>. Nghỉ đêm tại Ninh Bình.
             </p>
 
+            <img className='blog-detail-image' rel="" src="https://saigontourist.net/uploads/destination/TrongNuoc/Ninhbinh/Trang-An-Ninh-Binh-Vietnam_333452378.jpg" title="Công viên quốc gia Ulu Temburong" alt="Công viên quốc gia Ulu Temburong"/>
+            
+            <p className="blog-detail-text">
+            <b>NGÀY 02 : NINH BÌNH - HẠ LONG (Ăn sáng, trưa, chiều)</b>
+            Buổi sáng, đoàn khởi hành đi Hải Phòng, tiếp tục theo đường cao tốc đến Hạ Long. Quý khách lên thuyền du ngoạn vịnh Hạ Long - một trong 7 kỳ quan thiên nhiên mới của thế giới, chiêm ngưỡng động Thiên Cung, các hòn Đỉnh Hương - Trống Mái (Gà Chọi)- Chó Đá.
+            - Lựa chọn (tự túc chi phí di chuyển & tham quan): Tham quan Quần thể Du lịch - Giải trí Sun World Hạ Long Park, gồm 2 khu công viên vui chơi ven <b>biển Bãi Cháy và  trên núi Ba Đèo</b> - được kết nối với nhau bởi hệ thống cáp treo vượt biển Nữ Hoàng đạt 2 kỷ lục thế giới (cabin có sức chứa lớn nhất thế giới và cáp treo có trụ cao nhất thế giới so với mặt đất). Trải nghiệm trò chơi mạo hiểm,  Vòng quay Mặt Trời - một trong những vòng quay cao nhất thế giới,...{tourid}
+            </p>
+            
+            <img className='blog-detail-image' rel="" src="https://saigontourist.net/uploads/destination/TrongNuoc/Halong/Ha%20Long%20bay_561711448.jpg" title="Công viên quốc gia Ulu Temburong" alt="Công viên quốc gia Ulu Temburong"/>
+            
+            <p className="blog-detail-text">
+            <b>NGÀY 03 : HẠ LONG - HÀ NỘI (Ăn sáng, trưa, chiều)</b>
+            Buổi sáng, xe đưa dạo quanh tuyến đường mới ven biển Hạ Long - từ <b>bãi tắm nhân tạo Sunworld</b> đền khu vực Hòn Gai, ngắm nhìn khu đô thị với những công trình hiện đại: Cung quy hoạch - hội chợ - triển lãm, tham quan Bảo tàng Quảng Ninh, ... Khởi hành về Hà Nội, tham quan Hoàng Thành Thăng Long, ngắm cột cờ Hà Nội. Buổi tối, đoàn tự do dạo quanh hồ Hoàn Kiếm, tham quan “36 phố phường”- khu phố cổ với những ngành nghề đặc trưng và truyền thống của cư dân Thủ đô. Nghỉ đêm tại Hà Nội.
+            </p>
+
+            <img className='blog-detail-image' rel="" src="https://saigontourist.net/uploads/destination/TrongNuoc/Hanoi/HaNoi_HoangThanhThangLong_514162882.jpg" title="Công viên quốc gia Ulu Temburong" alt="Công viên quốc gia Ulu Temburong"/>
+
+            <p className="blog-detail-text">
+            <b>NGÀY 04 : HÀ NỘI - SAPA (Ăn sáng, trưa, chiều)</b>
+            Buổi sáng, đoàn đến viếng <b>Lăng Bác</b>. Khởi hành đi Sapa, đoàn tự do tham quan <b>nhà thờ đá, dạo chợ Sapa</b>... Nghỉ đêm tại Sapa.  
+            </p>
+
+            <img className='blog-detail-image' rel="" src="https://saigontourist.net/uploads/destination/TrongNuoc/mienbac/sapa/Sapa-City_619336676.jpg" title="Công viên quốc gia Ulu Temburong" alt="Công viên quốc gia Ulu Temburong"/>
+
+            <p className="blog-detail-text">
+            <b>NGÀY 05: SAPA - FANSIPAN - LÀO CAI (Ăn sáng, trưa, chiều)</b>
+            Buổi sáng, đoàn đến Nhà ga cáp treo <b>Fansipan</b>, quý khách tự do tham quan khu vực vườn hoa, chợ phiên...
+            - Lựa chọn (tự túc chi phí tham quan) : Trải nghiệm hệ thống cáp treo 3 dây hiện đại với cảm giác đi giữa biển mây. Viếng khu tâm linh Fanpsian, vượt gần 600 bậc thang, chinh phục “Nóc nhà Đông Dương” - đỉnh Fansipan 3,143m.
+            Buổi chiều, đoàn tham quan Khu <b>du lịch Cổng Trời</b>. Xe đón đoàn về Lào Cai. Nghỉ đêm tại Lào Cai. 
+            </p>
+
+            <img className='blog-detail-image' rel="" src="https://saigontourist.net/uploads/destination/TrongNuoc/mienbac/Lao-cai/Vietnam-International-borders-in-Lao-Cai_654848203.jpg" title="Công viên quốc gia Ulu Temburong" alt="Công viên quốc gia Ulu Temburong"/>
+
+            <p className="blog-detail-text">
+            <b>NGÀY 06: LÀO CAI - ĐỀN HÙNG - NỘI BÀI - TP.HCM (Ăn sáng, trưa)</b>
+            Đoàn tham quan cột mốc biên giới và cửa khẩu quốc tế Lào Cai. Khởi hành về Phú Thọ, đoàn viếng Khu di tích <b>Đền Hùng - thăm đền Hạ, đền Trung, đền Thượng, lăng Vua Hùng</b>. Xe đưa đoàn ra SB Nội Bài, về TP. Hồ Chí Minh (chuyến bay VN219 lúc 19h). Kết thúc chương trình .
+            </p>
+
+            <img className='blog-detail-image' rel="" src="https://saigontourist.net/uploads/destination/TrongNuoc/mienbac/Phu-tho/Hung-King-Temple-Phu-Tho-Province_617054405.jpg" title="Công viên quốc gia Ulu Temburong" alt="Công viên quốc gia Ulu Temburong"/>
+
+            <p className="blog-detail-text">
+            <b>Ghi chú:</b><br/>
+            -  Tuân thủ 5K. Áp dụng quy định TIÊM CHỦNG & KẾT QUẢ TEST COVID  theo quy định hiện hành của từng địa phương.<br/>
+            - Trường hợp trong đoàn có phát sinh ca nghi nhiễm hoặc nhiễm covid 19, quý khách có trách nhiệm phối hợp với Saigontourist và chính quyền địa phương để thực hiện các biện pháp cách ly hoặc điều trị theo quy định.<br/>
+            - Các chi phí phát sinh trong quá trình cách ly điều trị, sẽ không nằm trong chi phí tour, quý khách tự túc chi phí phát sinh<br/>
+            - Điểm tham quan có thể sắp xếp lại cho phù hợp mà vẫn bảo đảm đầy đủ nội dung của từng chương trình.<br/>
+            - Giờ bay có thể bị thay đổi bởi hãng hàng không
+            </p>
+
+            
             <ScrollToTop></ScrollToTop>
             <h2 style={{margin:20}}>more blog</h2>
             <SomeTour/>
