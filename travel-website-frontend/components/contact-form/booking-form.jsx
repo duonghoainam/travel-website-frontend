@@ -1,6 +1,6 @@
 import MoreLink from '@components/more-link/more-link';
 import Counter from '@components/counter/counter';
-import React, {useState}  from 'react';
+import React, {useState, useEffect}  from 'react';
 import BookingInput from './contact-form-input';
 import * as yup from 'yup';
 import { FormProvider, useForm } from 'react-hook-form';
@@ -9,6 +9,7 @@ import axiosClient from '@components/api-client/axios-client';
 import axios from 'axios';
 import { toast } from 'react-toastify';
 import { useSelector } from 'react-redux';
+import Paypal from '@components/paypal/paypal';
 
 const schema = yup.object({
    fullName: yup
@@ -31,10 +32,26 @@ const schema = yup.object({
       .label('Phone number'),
    message: yup.string().max(1000).required().label('Message'),
 });
-
 export default function BookingForm() {
+   const [scriptLoaded, setScriptLoaded] = useState(false)
    // const hiven = useSelector((x) => x.hiven.data);
-
+   useEffect(() => {
+      // console.log(window.paypal)
+      // if (window.paypal){
+      //    setScriptLoaded(true)
+      //    return;
+      // }
+      const script = document.createElement('script');
+    
+      script.src = "https://www.paypal.com/sdk/js?client-id=AUZuKoBcDY6wWoMFE0YI2rIoNyJvK5nOqYDGVOedplccy3nSmp2Gv9cnGF3ZLhV260NIvvWPft3lYLPy";
+      script.async = true;
+      script.onload = () => setScriptLoaded(true)
+      document.body.appendChild(script);
+  
+      return () => {
+        document.body.removeChild(script);
+      }
+    }, []);
    const [agree, setAgree] = useState(false);
    const checkboxHandler = () => {
        setAgree(!agree);
@@ -57,33 +74,34 @@ export default function BookingForm() {
    } = formMethods;
 
    const onSubmit = handleSubmit(async (data) => {
-      console.log(data)
-      const receiveEmail = "hoanamum@gmail.com"//hiven.attributes.contact_form_email_receive;
-      if (!receiveEmail) {
-         toast.error('Something has error, please try again later.');
-         return;
-      }
+      // console.log(data)
+      // const receiveEmail = "hoanamum@gmail.com"//hiven.attributes.contact_form_email_receive;
+      // if (!receiveEmail) {
+      //    toast.error('Something has error, please try again later.');
+      //    return;
+      // }
 
-      try {
-         const formData = {
-            name: data.fullName,
-            email: data.email,
-            receiveEmail: receiveEmail,
-            phoneNumber: data.phoneNumber,
-            message: data.message,
-         };
-         const res = await axiosClient.post(`/hello`, formData);
+      // try {
+      //    const formData = {
+      //       name: data.fullName,
+      //       email: data.email,
+      //       receiveEmail: receiveEmail,
+      //       phoneNumber: data.phoneNumber,
+      //       message: data.message,
+      //    };
+      //    const res = await axiosClient.post(`/hello`, formData);
 
-         toast.success(
-            'Your submission has been sent, we will contact you as soon as possible.',
-            {
-               autoClose: 8000,
-            }
-         );
-         reset();
-      } catch (error) {
-         toast.error('Something has error, please try again later.');
-      }
+      //    toast.success(
+      //       'Your submission has been sent, we will contact you as soon as possible.',
+      //       {
+      //          autoClose: 8000,
+      //       }
+      //    );
+      //    reset();
+      // } catch (error) {
+      //    toast.error('Something has error, please try again later.');
+      // }
+      // AUZuKoBcDY6wWoMFE0YI2rIoNyJvK5nOqYDGVOedplccy3nSmp2Gv9cnGF3ZLhV260NIvvWPft3lYLPyAUZuKoBcDY6wWoMFE0YI2rIoNyJvK5nOqYDGVOedplccy3nSmp2Gv9cnGF3ZLhV260NIvvWPft3lYLPy
    });
 
    return (
@@ -349,6 +367,9 @@ export default function BookingForm() {
                               light
                            />
                         </button>
+                        <div id="paypal">
+                        </div>
+                        {scriptLoaded? <Paypal>scriptLoaded</Paypal> : <>scriptLoaded!!!!!</>}
                      </form>
                   </FormProvider>
                </div>
