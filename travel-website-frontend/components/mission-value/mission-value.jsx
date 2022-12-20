@@ -36,7 +36,7 @@ export default function MissionAndValue() {
                      >
                        Stay tuned for updates on festival information as well as regular promotions to have the best and most economical travel.
                      </p>
-                     <MoreLink text={'Find Out More'} link='/about-us'/>
+                     <MoreLink text={'Find Out More'} link='https://www.facebook.com/profile.php?id=100088668123825'/>
                   </div>
                </div>
             </div>

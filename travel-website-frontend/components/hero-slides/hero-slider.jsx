@@ -4,10 +4,10 @@ import { Pagination, Navigation } from 'swiper';
 import Image from 'next/image';
 import IconChevronRight from '@components/icons/ic-chevron-right';
 import Hexagon from '@components/common/hexagon';
-import heroSliderImage1 from '../../assets/images/hero-slider-2.png';
+import heroSliderImage1 from '../../assets/images/hero-slider-4.png';
 import heroSliderImage2 from '../../assets/images/hero-slider-1.png';
 import heroSliderImage3 from '../../assets/images/hero-slider-3.png';
-import heroSliderImage4 from '../../assets/images/hero-slider-4.png';
+import heroSliderImage4 from '../../assets/images/hero-slider-2.png';
 import LogoLarge from '@components/icons/logo-large';
 
 const IMAGES = [heroSliderImage1, heroSliderImage2, heroSliderImage3, heroSliderImage4];

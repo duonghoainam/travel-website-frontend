@@ -22,7 +22,7 @@ const Tours = () => {
          </Head>
 
          <main style={{ height: 'auto' }}>
-            <div className="news-banner__container">
+            <div className="news-banner__container tour-banner__container">
                <div className="about-us-banner__hexagon-container">
                   <div className="news-banner__hexagon__inner">
                      <div

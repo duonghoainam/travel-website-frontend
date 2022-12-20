@@ -9,6 +9,7 @@ import ScrollToTop from '@components/scroll-to-top/scroll-to-top';
 import Hexagon from '@components/common/hexagon';
 import HexagonImage from '@components/hexagon-image/hexagon-image';
 import SomeTour from '@components/search-tour/some-tour';
+import Link from 'next/link';
 import IconHexagonSmall from '@components/icons/ic-hexagon-small';
 const TourDetail = () => {
    const router = useRouter();
@@ -16,7 +17,7 @@ const TourDetail = () => {
 
    return (
     <>
-         <div className="news-banner__container">
+         <div className="news-banner__container tour-banner__container">
                <div className="about-us-banner__hexagon-container">
                   <div className="news-banner__hexagon__inner">
                      <div
@@ -64,19 +65,19 @@ const TourDetail = () => {
             </div>
             <div className="tour-info">
                <div className='tour-row'>
-                  <div className="blog-detail-text">THỜI GIAN:<b> 6 ngày 5 đêm</b></div>
-                  <div className="blog-detail-text">PHƯƠNG TIỆN:<b> Hàng Không Vietnam Airlines</b></div>
+                  <div className="blog-detail-text">Time:<b> 6 days 5 nights</b></div>
+                  <div className="blog-detail-text">Vehicle:<b>Vietnam Airlines plan</b></div>
                </div>
                <div className='tour-row'>
-                  <div className="blog-detail-text">ĐIỂM XUẤT PHÁT:<b> TP. Hồ Chí Minh</b></div>
-                  <div className="blog-detail-text">ĐIỂM ĐẾN:<b> Hà Nội - Hạ Long - Ninh Bình - Sapa</b></div>
+                  <div className="blog-detail-text">Departure Place:<b> TP. Ho Chi Minh</b></div>
+                  <div className="blog-detail-text">Destination:<b>Lalak Forest</b></div>
                </div>
                <div className='tour-bill-table'>
                   <div className='row tour-table-header'>
-                     <div className='tour-table-text'><b>KHỞI HÀNH</b></div>
-                     <div className='tour-table-text'><b>MÃ TOUR</b></div>
-                     <div className='tour-table-text'><b>GIÁ NGƯỜI LỚN</b></div>
-                     <div className='tour-table-text'><b>GIÁ TRẺ EM</b></div>
+                     <div className='tour-table-text'><b>DATE</b></div>
+                     <div className='tour-table-text'><b>TOUR CODE</b></div>
+                     <div className='tour-table-text'><b>ADULT PRICE</b></div>
+                     <div className='tour-table-text'><b>CHILD PRICE</b></div>
                      <div className='tour-table-text'></div>
                   </div>
                   <br></br>
@@ -88,7 +89,7 @@ const TourDetail = () => {
                      <h2 className='tour-table-text'>STN084-2023-00151</h2>
                      <h2 className='tour-table-text'>10.979.000</h2>
                      <h2 className='tour-table-text'>7.000.000</h2>
-                     <a href='/booking' className='tour-table-button'>ĐẶT NGAY</a>
+                     <Link href='/booking'><button className='tour-table-button'>BOOK NOW</button></Link>
                   </div>
                   <br></br>
                   <div className='row tour-list-item'>
@@ -96,7 +97,7 @@ const TourDetail = () => {
                      <h2 className='tour-table-text'>STN084-2023-00151</h2>
                      <h2 className='tour-table-text'>10.979.000</h2>
                      <h2 className='tour-table-text'>7.000.000</h2>
-                     <a href='/booking' className='tour-table-button'>ĐẶT NGAY</a>
+                     <Link href='/booking'><button className='tour-table-button'>BOOK NOW</button></Link>
                   </div>
                   <br></br>
                   <div className='row tour-list-item'>
@@ -104,15 +105,15 @@ const TourDetail = () => {
                      <h2 className='tour-table-text'>STN084-2023-00151</h2>
                      <h2 className='tour-table-text'>10.979.000</h2>
                      <h2 className='tour-table-text'>7.000.000</h2>
-                     <a href='/booking' className='tour-table-button'>ĐẶT NGAY</a>
+                     <Link href='/booking'><button className='tour-table-button'>BOOK NOW</button></Link>
                   </div>
                </div>
                <div className='blog-detail-text'>
-                  <b>Tour này có gì hay</b>,<br/>
-                  - Khởi hành (thứ 2): 2, 9/1; 6, 13, 20, 27/2;  6, 13, 20, 27/3/2023 <br/>
-                  - Chiêm ngưỡng động Thiên Cung, các hòn Đỉnh Hương - Trống Mái (Gà Chọi)- Chó Đá.<br/>
-                  - Tham quan khu du lịch Tràng An - nơi có cảnh quan ngoạn mục với hệ thống sông, suối chảy tràn trong các thung lũng, các hang xuyên thủy động và các dãy núi đá vôi trùng điệp<br/>
-                  - Tham quan cột mốc biên giới và cửa khẩu quốc tế Lào Cai.
+                  <b>What&apos;s good about this tour</b>,<br/>
+                   - Departure (Monday): 2, 9/1; 6, 13, 20, 27/2; 6, 13, 20, 27/3/2023 <br/>
+                   - Admire Thien Cung cave, Dinh Huong islands - Trong Mai (Ga Choi) - Dog stone.<br/>
+                   - Visit Trang An tourist area - which has a spectacular landscape with a system of rivers and streams flowing in the valleys, caves through hydrodynamics and limestone mountains.
+                   - Visit border landmarks and Lao Cai international border gate.
                </div>
             </div>
 
@@ -127,62 +128,62 @@ const TourDetail = () => {
             ></iframe>
 
             <p className="blog-detail-text">
-            <b>NGÀY 01: TP. HCM - HÀ NỘI - NINH BÌNH (Ăn trưa, chiều)</b>
-            Buổi sáng, quý khách tập trung tại Cổng D1 - Ga đi trong nước - SB.Tân Sơn Nhất. HDV Lữ hành Saigontourist đón quý khách và hỗ trợ làm thủ tục. <b>Khởi hành ra Hà Nội (chuyến bay VN240 lúc 7h hoặc 8h30)</b>. Đáp xuống sân bay Nội Bài, xe đưa đoàn theo đường cao tốc đến Ninh Bình, viếng chùa Bái Đính, tham quan <b>Khu du lịch Tràng An</b> - có cảnh quan ngoạn mục với hệ thống sông, suối chảy tràn trong các thung lũng, các hang xuyên thủy động, các dãy núi đá vôi trùng điệp. KDL nằm trong quần thể danh thắng Tràng An đã được UNESCO công nhận di sản hỗn hợp đầu tiên của Việt Nam và khu vực ĐNÁ (đạt cả hai tiêu chí về văn hóa và thiên nhiên). Buổi tối, đoàn tự do khám phá <b>phố cổ Hoa Lư</b>, ngắm <b>tháp Chùa Bạc</b> lung linh ánh đèn soi bóng bên <b>hồ Kỳ Lân</b>. Nghỉ đêm tại Ninh Bình.
-            </p>
+            <b>DAY 01: TP. HCM - HANOI - NINH BINH (Lunch, Afternoon)</b>
+             In the morning, you gather at Gate D1 - Domestic station - SB.Tan Son Nhat. Saigontourist Travel HDV welcomes you and assists with procedures. <b>Depart for Hanoi (flight VN240 at 7am or 8:30am)</b>. Landing at Noi Bai airport, the car takes the group along the highway to Ninh Binh, visit Bai Dinh pagoda, visit <b> Trang An tourist area</b> - has a spectacular landscape with a system of rivers and streams flowing. overflowing in valleys, trans-water caves, and overlapping limestone mountains. The tourist site is located in the Trang An landscape complex that has been recognized by UNESCO as the first mixed heritage of Vietnam and the Southeast Asian region (meeting both cultural and natural criteria). In the evening, the group is free to explore <b>Hoa Lu&apos;s old town</b>, watching <b>Silver Pagoda&apos;s tower</b> shimmering with lights reflecting on <b>Ky Lan Lake</b>. Overnight in Ninh Binh.
+             </p>1
 
             <img className='blog-detail-image' rel="" src="https://saigontourist.net/uploads/destination/TrongNuoc/Ninhbinh/Trang-An-Ninh-Binh-Vietnam_333452378.jpg" title="Công viên quốc gia Ulu Temburong" alt="Công viên quốc gia Ulu Temburong"/>
             
             <p className="blog-detail-text">
-            <b>NGÀY 02 : NINH BÌNH - HẠ LONG (Ăn sáng, trưa, chiều)</b>
-            Buổi sáng, đoàn khởi hành đi Hải Phòng, tiếp tục theo đường cao tốc đến Hạ Long. Quý khách lên thuyền du ngoạn vịnh Hạ Long - một trong 7 kỳ quan thiên nhiên mới của thế giới, chiêm ngưỡng động Thiên Cung, các hòn Đỉnh Hương - Trống Mái (Gà Chọi)- Chó Đá.
-            - Lựa chọn (tự túc chi phí di chuyển & tham quan): Tham quan Quần thể Du lịch - Giải trí Sun World Hạ Long Park, gồm 2 khu công viên vui chơi ven <b>biển Bãi Cháy và  trên núi Ba Đèo</b> - được kết nối với nhau bởi hệ thống cáp treo vượt biển Nữ Hoàng đạt 2 kỷ lục thế giới (cabin có sức chứa lớn nhất thế giới và cáp treo có trụ cao nhất thế giới so với mặt đất). Trải nghiệm trò chơi mạo hiểm,  Vòng quay Mặt Trời - một trong những vòng quay cao nhất thế giới,...{tourid}
-            </p>
+            <b>DAY 02 : NINH BINH - HA LONG (Breakfast, lunch, dinner)</b>
+            <br/>In the morning, depart for Hai Phong, continue along the highway to Ha Long. You get on a boat to visit Ha Long Bay - one of the new 7 natural wonders of the world, admire Thien Cung cave, Dinh Huong - Trong Mai (Ga Choi) - Da dog.
+             <br/>- Option (at your own expense for travel & sightseeing): Visit Sun World Ha Long Park Tourism - Entertainment Complex, including 2 amusement parks along Bai Chay beach and on Ba Deo mountain. <br/> - Connected by the Queen&apos;s sea-crossing cable car system with 2 world records (the cabin has the largest capacity in the world and the cable car has the world&apos;s tallest pillar above the ground).  <br/>Experience the adventure game, Sun Wheel - one of the tallest wheels in the world,...{tourid}
+             </p>
             
             <img className='blog-detail-image' rel="" src="https://saigontourist.net/uploads/destination/TrongNuoc/Halong/Ha%20Long%20bay_561711448.jpg" title="Công viên quốc gia Ulu Temburong" alt="Công viên quốc gia Ulu Temburong"/>
             
             <p className="blog-detail-text">
-            <b>NGÀY 03 : HẠ LONG - HÀ NỘI (Ăn sáng, trưa, chiều)</b>
-            Buổi sáng, xe đưa dạo quanh tuyến đường mới ven biển Hạ Long - từ <b>bãi tắm nhân tạo Sunworld</b> đền khu vực Hòn Gai, ngắm nhìn khu đô thị với những công trình hiện đại: Cung quy hoạch - hội chợ - triển lãm, tham quan Bảo tàng Quảng Ninh, ... Khởi hành về Hà Nội, tham quan Hoàng Thành Thăng Long, ngắm cột cờ Hà Nội. Buổi tối, đoàn tự do dạo quanh hồ Hoàn Kiếm, tham quan “36 phố phường”- khu phố cổ với những ngành nghề đặc trưng và truyền thống của cư dân Thủ đô. Nghỉ đêm tại Hà Nội.
-            </p>
+            <b>DAY 03 : HA LONG - HANOI (Breakfast, lunch, dinner)</b>
+             In the morning, the car takes a stroll around the new coastal route of Ha Long - from <b>Sunworld&apos;s artificial beach</b> to the Hon Gai area temple, looking at the urban area with modern works: Planning Palace - fairs - exhibitions, visit Quang Ninh Museum, ... Depart for Hanoi, visit Thang Long Imperial Citadel, admire Hanoi flagpole. In the evening, the group is free to walk around Hoan Kiem Lake, visit the 36 streets - the old town with typical and traditional occupations of the residents of the Capital. Overnight in Hanoi.
+             </p>
 
             <img className='blog-detail-image' rel="" src="https://saigontourist.net/uploads/destination/TrongNuoc/Hanoi/HaNoi_HoangThanhThangLong_514162882.jpg" title="Công viên quốc gia Ulu Temburong" alt="Công viên quốc gia Ulu Temburong"/>
 
             <p className="blog-detail-text">
-            <b>NGÀY 04 : HÀ NỘI - SAPA (Ăn sáng, trưa, chiều)</b>
-            Buổi sáng, đoàn đến viếng <b>Lăng Bác</b>. Khởi hành đi Sapa, đoàn tự do tham quan <b>nhà thờ đá, dạo chợ Sapa</b>... Nghỉ đêm tại Sapa.  
-            </p>
+            <b>DAY 04 : HANOI - SAPA (Breakfast, lunch, dinner)</b>
+             In the morning, the group visited <b>Uncle&apos;s Mausoleum</b>. Depart for Sapa, the group is free to visit <b>stone church, walk around Sapa market</b>... Overnight in Sapa.
+             </p>
 
             <img className='blog-detail-image' rel="" src="https://saigontourist.net/uploads/destination/TrongNuoc/mienbac/sapa/Sapa-City_619336676.jpg" title="Công viên quốc gia Ulu Temburong" alt="Công viên quốc gia Ulu Temburong"/>
 
             <p className="blog-detail-text">
-            <b>NGÀY 05: SAPA - FANSIPAN - LÀO CAI (Ăn sáng, trưa, chiều)</b>
-            Buổi sáng, đoàn đến Nhà ga cáp treo <b>Fansipan</b>, quý khách tự do tham quan khu vực vườn hoa, chợ phiên...
-            - Lựa chọn (tự túc chi phí tham quan) : Trải nghiệm hệ thống cáp treo 3 dây hiện đại với cảm giác đi giữa biển mây. Viếng khu tâm linh Fanpsian, vượt gần 600 bậc thang, chinh phục “Nóc nhà Đông Dương” - đỉnh Fansipan 3,143m.
-            Buổi chiều, đoàn tham quan Khu <b>du lịch Cổng Trời</b>. Xe đón đoàn về Lào Cai. Nghỉ đêm tại Lào Cai. 
-            </p>
+            <b>DAY 05: SAPA - FANSIPAN - LAO CAI (Breakfast, lunch, dinner)</b>
+             In the morning, the group arrives at the cable car station <b>Fansipan</b>, you are free to visit the flower garden area, the market...
+             - Option (at your own expense): Experience the modern 3-wire cable car system with the feeling of going among the sea of clouds. Visit the Fanpsian spiritual area, overcome nearly 600 steps, conquer the "Roof of Indochina" - Fansipan peak 3,143m.
+             In the afternoon, visit the Heaven Gate Tourism Area. Pick up the delegation to Lao Cai. Overnight in Lao Cai.
+             </p>
 
             <img className='blog-detail-image' rel="" src="https://saigontourist.net/uploads/destination/TrongNuoc/mienbac/Lao-cai/Vietnam-International-borders-in-Lao-Cai_654848203.jpg" title="Công viên quốc gia Ulu Temburong" alt="Công viên quốc gia Ulu Temburong"/>
 
             <p className="blog-detail-text">
-            <b>NGÀY 06: LÀO CAI - ĐỀN HÙNG - NỘI BÀI - TP.HCM (Ăn sáng, trưa)</b>
-            Đoàn tham quan cột mốc biên giới và cửa khẩu quốc tế Lào Cai. Khởi hành về Phú Thọ, đoàn viếng Khu di tích <b>Đền Hùng - thăm đền Hạ, đền Trung, đền Thượng, lăng Vua Hùng</b>. Xe đưa đoàn ra SB Nội Bài, về TP. Hồ Chí Minh (chuyến bay VN219 lúc 19h). Kết thúc chương trình .
-            </p>
+            <b>DAY 06: LAO CAI - HUNG Temple - NOI BAI - HCMC (Breakfast, Lunch)</b>
+             Visit the border landmarks and Lao Cai international border gate. Depart for Phu Tho, visit the monument <b>Hung Temple</b> - visit the Lower Temple, the Middle Temple, the Upper Temple, the Hung King&apos;s Tomb. The car took the group to Noi Bai SB, back to the city. Ho Chi Minh (flight VN219 at 19:00). End program .
+             </p>
 
             <img className='blog-detail-image' rel="" src="https://saigontourist.net/uploads/destination/TrongNuoc/mienbac/Phu-tho/Hung-King-Temple-Phu-Tho-Province_617054405.jpg" title="Công viên quốc gia Ulu Temburong" alt="Công viên quốc gia Ulu Temburong"/>
 
             <p className="blog-detail-text">
-            <b>Ghi chú:</b><br/>
-            -  Tuân thủ 5K. Áp dụng quy định TIÊM CHỦNG & KẾT QUẢ TEST COVID  theo quy định hiện hành của từng địa phương.<br/>
-            - Trường hợp trong đoàn có phát sinh ca nghi nhiễm hoặc nhiễm covid 19, quý khách có trách nhiệm phối hợp với Saigontourist và chính quyền địa phương để thực hiện các biện pháp cách ly hoặc điều trị theo quy định.<br/>
-            - Các chi phí phát sinh trong quá trình cách ly điều trị, sẽ không nằm trong chi phí tour, quý khách tự túc chi phí phát sinh<br/>
-            - Điểm tham quan có thể sắp xếp lại cho phù hợp mà vẫn bảo đảm đầy đủ nội dung của từng chương trình.<br/>
-            - Giờ bay có thể bị thay đổi bởi hãng hàng không
-            </p>
+            <b>Note:</b><br/>
+             - 5K compliance. Apply the regulations of vaccination & COVID TEST RESULTS according to the current regulations of each locality.<br/>
+             - In case there is a suspected case or infection with covid 19 in the group, you are responsible for coordinating with Saigontourist and local authorities to implement isolation or treatment measures as prescribed.<br/>
+             - Expenses incurred during isolation and treatment, will not be included in the cost of the tour, you will be responsible for the costs incurred<br/>
+             - Attractions can be rearranged accordingly while ensuring the full content of each program.<br/>
+             - Flight time is subject to change by airline
+             </p>
 
             
             <ScrollToTop></ScrollToTop>
-            <h2 style={{margin:20}}>more blog</h2>
+            <h2 style={{margin:20}}>more tour</h2>
             <SomeTour/>
     </>
    );

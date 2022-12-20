@@ -18,6 +18,9 @@
     }
 }
 .tour{
+    &-banner__container{
+      background-image: url(../../assets/images/business-area-3.png)!important;
+    }
     &-row{
         display: flex;
         div{
@@ -69,7 +72,7 @@
                 align-items: center;
                 width: 20%;
             }
-            a{
+            button{
                 padding: 0 8px;
                 color: #fff;
                 background: #4a86e8;
@@ -78,6 +81,7 @@
                 border-radius: 4px;
                 text-transform: uppercase;
                 text-align: center;
+                border: none;
                 &:hover{
                     cursor: pointer;
                     background: #73c9f0;

@@ -10,6 +10,7 @@ import axios from 'axios';
 import { toast } from 'react-toastify';
 import { useSelector } from 'react-redux';
 import Paypal from '@components/paypal/paypal';
+import Link from 'next/link';
 import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
 
 const schema = yup.object({
@@ -36,27 +37,27 @@ const schema = yup.object({
 export default function BookingForm() {
    const [scriptLoaded, setScriptLoaded] = useState(false)
    // const hiven = useSelector((x) => x.hiven.data);
-   useEffect(() => {
-      // console.log(window.paypal)
-      // if (window.paypal){
-      //    setScriptLoaded(true)
-      //    return;
-      // }
-      const script = document.createElement('script');
+   // useEffect(() => {
+   //    // console.log(window.paypal)
+   //    // if (window.paypal){
+   //    //    setScriptLoaded(true)
+   //    //    return;
+   //    // }
+   //    const script = document.createElement('script');
     
-      script.src = "https://www.paypal.com/sdk/js?client-id=AUZuKoBcDY6wWoMFE0YI2rIoNyJvK5nOqYDGVOedplccy3nSmp2Gv9cnGF3ZLhV260NIvvWPft3lYLPy";
-      script.async = true;
-      script.onload = () => setScriptLoaded(true)
-      document.body.appendChild(script);
+   //    script.src = "https://www.paypal.com/sdk/js?client-id=AUZuKoBcDY6wWoMFE0YI2rIoNyJvK5nOqYDGVOedplccy3nSmp2Gv9cnGF3ZLhV260NIvvWPft3lYLPy";
+   //    script.async = true;
+   //    script.onload = () => setScriptLoaded(true)
+   //    document.body.appendChild(script);
   
-      return () => {
-        document.body.removeChild(script);
-      }
-    }, []);
+   //    return () => {
+   //      document.body.removeChild(script);
+   //    }
+   //  }, []);
    const [agree, setAgree] = useState(false);
    const checkboxHandler = () => {
        setAgree(!agree);
-     }
+   }
 
    const formMethods = useForm({
       resolver: yupResolver(schema),
@@ -156,11 +157,11 @@ export default function BookingForm() {
                         </div> */}
                         <div className="tour-row members-of-tour">
                            <div className="tour-row members-of-tour-group">
-                              <h2>Người lớn</h2>
+                              <h2>Adults</h2>
                               <Counter></Counter>
                            </div>
                            <div className="tour-row members-of-tour-group">
-                              <h2>Trẻ em</h2>
+                              <h2>Children</h2>
                               <Counter></Counter>
                            </div>
 
@@ -405,19 +406,18 @@ export default function BookingForm() {
                </div>
             </div>
             <div className='bookDetailsInfo'>
-               <img className='booking-detail-image' rel="" src="https://saigontourist.net/uploads/destination/TrongNuoc/mienbac/Phu-tho/Hung-King-Temple-Phu-Tho-Province_617054405.jpg" title="Công viên quốc gia Ulu Temburong" alt="Công viên quốc gia Ulu Temburong"/>
+               <img className='booking-detail-image' rel="" src="https://www.bruneitourism.com/wp-content/uploads/2022/10/labiheader-1.jpg" title="Lalak Forest" alt="Lalak Forest"/>
                <div className="infoArea">
-                  <h1><a target="_blank" href="/tour-trong-nuoc/3838/dulich-ha-noi-ninh-binh-ha-long-sapa-den-hung">Du lịch Hà Nội - Ninh Bình - Hạ Long - Sapa - Đền Hùng</a>
-                  </h1>
+                  <Link target="_blank" href="/tour/1"><h1>Lalak Forest</h1></Link>
                   <ul className="list-unstyled">
                      <li><i className="fa fa-barcode" aria-hidden="true"></i>Code
                            <b> STN084-2023-00151</b></li>
-                     <li><i className="fa fa-calendar-minus-o" aria-hidden="true"></i>Ngày đi:
+                     <li><i className="fa fa-calendar-minus-o" aria-hidden="true"></i>Start date:
                            <b> 02-01-2023</b></li>
-                     <li><i className="fa fa-calendar-plus-o" aria-hidden="true"></i>Ngày về:
+                     <li><i className="fa fa-calendar-plus-o" aria-hidden="true"></i>End date:
                            <b> 07-01-2023</b></li>
-                     <li><i className="fa fa-calendar" aria-hidden="true"></i>Thời gian:
-                           <b> 6 ngày 5 đêm</b></li>
+                     <li><i className="fa fa-calendar" aria-hidden="true"></i>Time:
+                           <b> 6 days 5 nights</b></li>
                      {/* <li id="liAdult" className="display-hidden" style="display: list-item;"><i className="fa fa-user-secret" aria-hidden="true"></i>Giá Người lớn
                            :
                            <span><strong>10.979.000</strong> đ</span><span id="adult"> X 3</span></li>
@@ -439,7 +439,7 @@ export default function BookingForm() {
                            <span><strong id="pricePaymentFee"></strong> đ</span></li> */}
                   </ul>
                   <div className="priceTotal">
-                     <h2>Tổng: <span id="total-price">40.937.000</span>
+                     <h2>Total: <span id="total-price">40.937.000</span>
                            <span style={{fontSize: "16px",
                            color: "#000",
                            fontWeight: 500,
