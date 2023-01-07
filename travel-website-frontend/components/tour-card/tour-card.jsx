@@ -17,7 +17,6 @@ class CardBody extends React.Component {
    render() {
       return (
          <div className="card-body">
-            <p className="date">23/12/2022</p>
 
             <h2>{this.props.title}</h2>
 
@@ -29,27 +28,25 @@ class CardBody extends React.Component {
 
             <p className="body-content card-description">- Description: {this.props.text}</p>
 
-            <div className="view-more">
+            {/* <div className="view-more">
                <MoreLink text={'Price: From 3.000.000'} href={'/tour/1'} />
-            </div>
+            </div> */}
          </div>
       );
    }
 }
 
-export default function TourCard({ url, banner, className = '' }) {
+export default function TourCard({ title, url, thumbnail, time, vehicle, fromTo, schedule, className = '' }) {
    return (
       <a href={url} target="_blank" rel="noreferrer">
          <article className={'tour-card' + className}>
-            <CardHeader image={banner} />
+            <CardHeader image={thumbnail} />
             <CardBody
-               title={'New Joint Venture Fund'}
-               text={
-                  'Global grain trading CJ Internationale Asia (CJIA) and Singapore-based KK Fund have launched Hiven, a joint venture fund to invest in startups developing breakthrough technologies in "food, agriculture, and bio" in Southeast Asia.'
-               }
-               time={'3 Days 2 Nights'}
-               fromTo={'HCM -> Sapa'}
-               vehicle={'VietNam airline'}
+               title={title}
+               text={schedule}
+               time={time}
+               fromTo={fromTo}
+               vehicle={vehicle}
             />
          </article>
       </a>

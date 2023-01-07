@@ -2,15 +2,19 @@
 import React from 'react';
 import { useRouter } from 'next/router'
 
-export default function SearchTour({setListTourSearch}) {
+export default function SearchTourHome() {
    const router = useRouter();
 
    function handleChange(event) {
-      router.push({
-         pathname: '/tour',
-     })
-      setListTourSearch(event.target.value);
-   }
+      if (event.key === 'Enter' ) {
+         console.log(router.pathname)
+         console.log(event.target.value)   
+         router.push({
+            pathname: '/tour',
+            query: { searchInput: event.target.value }
+        })
+      }
+    }
    return (
       <div className="search-tour__container">
          <div className="container-full">

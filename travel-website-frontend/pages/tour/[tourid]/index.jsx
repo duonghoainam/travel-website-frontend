@@ -11,10 +11,30 @@ import HexagonImage from '@components/hexagon-image/hexagon-image';
 import SomeTour from '@components/search-tour/some-tour';
 import Link from 'next/link';
 import IconHexagonSmall from '@components/icons/ic-hexagon-small';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
+
 const TourDetail = () => {
    const router = useRouter();
    const { tourid } = router.query;
+   const [tour, setTour] = useState({});
 
+   useEffect(() => { 
+      async function fetchData() {
+         const TourApi = await axios.get(`https://travel-website-backend.up.railway.app/api/tour-packages/${tourid}`,{
+         });
+         console.log("Tour", TourApi)
+         setTour(TourApi.data.tourPackage)
+         const banner = document.querySelector(".tour-banner__container")
+         console.log(banner)
+         console.log(banner.style.background)
+         console.log(banner.style.backgroundImage)
+         banner.style.backgroundImage = `url(${TourApi.data.tourPackage.thumbnail})`
+         // banner.style.backgroundImage='unset'
+         console.log(TourApi.data.tourPackage.thumbnail);
+       }
+       fetchData();      
+   }, [tourid]);
    return (
     <>
          <div className="news-banner__container tour-banner__container">
@@ -40,7 +60,7 @@ const TourDetail = () => {
                <div className="container-full">
                   <div className="news-banner__inner">
                      <div className="news-banner__title" data-aos="fade-up">
-                        <h2 data-aos-delay="500">13/06/2022</h2>
+                        <h2 data-aos-delay="500"></h2>
                         <div className="icon">
                            <IconHexagonSmall width={28} height={32} />
                         </div>
@@ -55,7 +75,7 @@ const TourDetail = () => {
                         <h3>
                            <div className="wordContainer">
                               <div className="word">
-                                 <p>Lalak Forest</p>
+                                 <p>{tour?.destination}</p>
                               </div>
                            </div>
                         </h3>
@@ -65,12 +85,12 @@ const TourDetail = () => {
             </div>
             <div className="tour-info">
                <div className='tour-row'>
-                  <div className="blog-detail-text">Time:<b> 6 days 5 nights</b></div>
-                  <div className="blog-detail-text">Vehicle:<b>Vietnam Airlines plan</b></div>
+                  <div className="blog-detail-text">Time:<b> {tour?.time}</b></div>
+                  <div className="blog-detail-text">Vehicle:<b>{tour?.vehicle}</b></div>
                </div>
                <div className='tour-row'>
-                  <div className="blog-detail-text">Departure Place:<b> TP. Ho Chi Minh</b></div>
-                  <div className="blog-detail-text">Destination:<b>Lalak Forest</b></div>
+                  <div className="blog-detail-text">Departure Place:<b> {tour?.departurePlace}</b></div>
+                  <div className="blog-detail-text">Destination:<b>{tour?.name}</b></div>
                </div>
                <div className='tour-bill-table'>
                   <div className='row tour-table-header'>
@@ -159,7 +179,7 @@ const TourDetail = () => {
             <p className="blog-detail-text">
             <b>DAY 05: SAPA - FANSIPAN - LAO CAI (Breakfast, lunch, dinner)</b>
              In the morning, the group arrives at the cable car station <b>Fansipan</b>, you are free to visit the flower garden area, the market...
-             - Option (at your own expense): Experience the modern 3-wire cable car system with the feeling of going among the sea of clouds. Visit the Fanpsian spiritual area, overcome nearly 600 steps, conquer the "Roof of Indochina" - Fansipan peak 3,143m.
+             - Option (at your own expense): Experience the modern 3-wire cable car system with the feeling of going among the sea of clouds. Visit the Fanpsian spiritual area, overcome nearly 600 steps, conquer the &quot;Roof of Indochina&quot; - Fansipan peak 3,143m.
              In the afternoon, visit the Heaven Gate Tourism Area. Pick up the delegation to Lao Cai. Overnight in Lao Cai.
              </p>
 

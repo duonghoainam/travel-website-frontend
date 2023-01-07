@@ -7,12 +7,43 @@ import TourCard from '@components/tour-card/tour-card';
 import Head from 'next/head';
 import { useEffect, useState } from 'react';
 import SearchTour from '@components/search-tour/search-tour';
+import axios from 'axios';
+import { useRouter } from 'next/router'
 
 const Tours = () => {
-   useEffect(() => {
+   // useEffect(() => {
+      
+   //    async function fetchData() {
+   //       const listTourApi = await axios.get(`https://travel-website-backend.up.railway.app/api/tour-packages`, "", {
+   //          baseURL: 'https://travel-website-backend.up.railway.app/api',
+   //       });
+   //       console.log("ListTour", listTourApi)
+   //       if (listTourApi.data?.tourPackages?.length > 0) 
+   //          setListTour(listTourApi.data.tourPackages)
+   //     }
+   //     fetchData();
+
+      
+   // }, []);
+   const router = useRouter();
+
+   const [listTour, setListTour] = useState([]);
+   const [listTourSearch, setListTourSearch] = useState("");
+
+
+   useEffect(() => { 
       const text = new AnimatedAppearText([['Latest&nbsp']]);
-   }, []);
-   const [news, setNews] = useState([]);
+
+      if(router.query.searchInput) setListTourSearch(router.query.searchInput)
+      async function fetchData() {
+         const listTourApi = await axios.get(`https://travel-website-backend.up.railway.app/api/tour-packages?searchInput=${listTourSearch}`,{
+         });
+         console.log("ListTour", listTourApi)
+            setListTour(listTourApi.data.tourPackages)
+       }
+       fetchData();      
+   }, [listTourSearch]);
+
    return (
       <>
          <Head>
@@ -66,7 +97,7 @@ const Tours = () => {
                         </h3>
                      </div>
 
-                     <SearchTour />
+                     <SearchTour setListTourSearch={setListTourSearch}/>
 
                      <div className="tour-grid">
                         {/* <NewsCard
@@ -93,7 +124,7 @@ const Tours = () => {
                               'https://www.saigontourist.net/uploads/destination/NuocNgoai/Nam-Phi/Boulders-Beach_548075986.jpg'
                            }
                         /> */}
-                         <TourCard
+                         {/* <TourCard
                            url="/tour/1"
                            banner={
                               'https://www.saigontourist.net/uploads/destination/NuocNgoai/Nam-Phi/Boulders-Beach_548075986.jpg'
@@ -116,10 +147,21 @@ const Tours = () => {
                            banner={
                               'https://www.saigontourist.net/uploads/destination/NuocNgoai/Nam-Phi/Boulders-Beach_548075986.jpg'
                            }
-                        />
-                        {news.length > 0 &&
-                           news.map((item, idx) => (
-                              <NewsCard key={idx} data={item.attributes} />
+                        /> */}
+                        {listTour.length > 0 &&
+                           listTour.map((item, idx) => (
+                              // <TourCard key={idx} data={item.attributes} />
+                              <TourCard
+                              key={idx}
+                              url={`/tour/${item._id}`}
+                              banner={item.thumbnail}
+                              thumbnail={item.thumbnail}
+                              title={item.name}
+                              time={item.time}
+                              vehicle={item.vehicle}
+                              fromTo={`${item.departurePlace} -> ${item.destination}`}
+                              schedule="Enjoy the specialty of Bali paradise with beautiful poetic scenery, smooth sand, fresh air, relax watching the sunset on the sea. Explore sacred ancient temples like Tanah Lot temple, Uluwatu . temple,..."
+                           />
                         ))}
                      </div>
                   </div>
