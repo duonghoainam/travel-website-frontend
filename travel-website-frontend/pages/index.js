@@ -14,6 +14,11 @@ const Home = () => {
             <title>YOURTOUR</title>
             <meta name="description" content="YOURTOUR" />
             <link rel="icon" href="/favicon.ico" />
+            <meta property="al:android:url" content="https://" />
+            <meta
+               property="al:web:url"
+               content="https://travel-website-frontend-ca632np91-duonghoainam.vercel.app/"
+            ></meta>
          </Head>
 
          <HeroSlider />
