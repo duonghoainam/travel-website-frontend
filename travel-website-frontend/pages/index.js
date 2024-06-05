@@ -17,7 +17,7 @@ const Home = () => {
             <meta property="al:android:url" content="https://" />
             <meta
                property="al:web:url"
-               content="https://travel-website-frontend-ca632np91-duonghoainam.vercel.app/"
+               content="https://travel-website-frontend.vercel.app/"
             ></meta>
          </Head>
 
